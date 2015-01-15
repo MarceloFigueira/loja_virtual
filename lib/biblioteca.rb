@@ -1,4 +1,7 @@
 class Biblioteca
+
+	attr_reader :livros
+
 	def initialize
 		@livros = []
 	end
