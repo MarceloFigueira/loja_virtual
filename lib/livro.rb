@@ -1,15 +1,15 @@
 # coding: utf-8
 class Livro
 
-	attr_accessor :preco 
+	attr_accessor :valor
 	#com o uso do método attr_accessor temos acesso de leitura e escrita sobre o atributo
 	#é como o metodo get e set do Java
 
-	def initialize(autor, isbn = "1", numero_de_paginas, preco)
+	def initialize(autor, isbn = "1", numero_de_paginas, valor)
 		@autor = autor
 		@isbn = isbn
 		@numero_de_paginas = numero_de_paginas
-		@preco = preco
+		@valor = valor
 	end
 
 	def to_s
