@@ -3,8 +3,8 @@ class Biblioteca
 	attr_reader :livros
 
 	def initialize
-		#@livros = [] Assim inicializava com Array
-		@livros = {} #Assim inicializa com Hash
+		@livros = [] #Assim inicializava com Array
+		#@livros = {} #Assim inicializa com Hash
 		@banco_de_arquivos = BancoDeArquivos.new
 		#A linha acima inicializa banco de arquivos
 	end
@@ -12,8 +12,7 @@ class Biblioteca
 	def adiciona(livro)
 		#@livros << livro Assim acionavamos algo ao array
 		salva livro do
-			@livros[livro.categoria] ||= []
-			@livros[livro.categoria] << livro
+			@livros << livro
 		end
 		
 	end
@@ -23,9 +22,7 @@ class Biblioteca
 	end
 
 	def livros_por_categoria(categoria)
-		@livros[categoria].each do |livro|
-			yield livro if block_given?
-		end
+		@livros.select { |livro| livro.categoria == categoria }
 	end
 
 	private
